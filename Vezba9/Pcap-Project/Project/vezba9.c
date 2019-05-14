@@ -259,9 +259,9 @@ int main()
 	packet[0]=0x00;
 	packet[1]=0x0F;
 	packet[2]=0x60;
-	packet[3]=0x05;
-	packet[4]=0xCE;
-	packet[5]=0x01;
+	packet[3]=0x04;
+	packet[4]=0x51;
+	packet[5]=0x1B;
 	// Set MAC source address to 2:2:2:2:2:2
 	packet[6]=0x00;
 	packet[7]=0x0F;
@@ -274,6 +274,7 @@ int main()
 	{
 		packet[i]=(unsigned char)i;
 	}
+	packet[20]='A';
 	//Send down the packet
 	if (pcap_sendpacket(device_handle, packet, 100) != 0)
 	{
